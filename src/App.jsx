@@ -1,12 +1,24 @@
 import "./App.css";
 import Header from "./components/Header/Header";
 import MovieList from "./components/MovieList/MovieList";
+import MovieInfo from "./components/MovieInfo/MovieInfo";
+import NameBadge from "./components/NameBadge/NameBadge";
 
 function App() {
+  const selectedMovie = {
+    title: "Forrest Gump",
+    runningTime: 136,
+    genre: "Romantic Drama",
+  };
+
   return (
     <div className="App">
       <Header />
-      <MovieList />
+      <div className="flex-container">
+        <NameBadge displayedName="Brian" />
+        <MovieList />
+        <MovieInfo movieObj={selectedMovie} />
+      </div>
     </div>
   );
 }
